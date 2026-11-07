@@ -1,0 +1,18 @@
+[Unit]
+Description=Orin Nano Servo MCP Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/<USER>/servo-mcp
+EnvironmentFile=/etc/servo-mcp/environment
+ExecStart=/home/<USER>/servo-mcp/.venv/bin/python /home/<USER>/servo-mcp/server.py --host <JETSON_IP> --lock-file /run/orin-nano-1-servo-mcp.lock
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

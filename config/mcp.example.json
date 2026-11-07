@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "orin-nano-1-servo": {
+      "type": "http",
+      "url": "http://<JETSON_IP>:8000/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SERVO_MCP_TOKEN}"
+      }
+    }
+  }
+}

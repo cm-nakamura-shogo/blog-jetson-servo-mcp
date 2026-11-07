@@ -1,0 +1,52 @@
+{
+  "tools": [
+    {
+      "name": "set_servo_angle",
+      "description": "Move the physical SG90 to an approximate angle (-45..+45 degrees, center = 0) and hold it.\n\nExternal 5V supply must be on and grounds connected. This physically moves\nhardware. -45/0/+45 correspond to 1000/1500/2000us. No measured-angle feedback.\nPWM keeps running after this call and after the client disconnects.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "angle_deg": {
+            "title": "Angle Deg",
+            "type": "number"
+          }
+        },
+        "required": [
+          "angle_deg"
+        ],
+        "title": "set_servo_angleArguments"
+      },
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true,
+        "idempotent_hint": true
+      }
+    },
+    {
+      "name": "get_servo_status",
+      "description": "Get last commanded position and software PWM state; does not move hardware.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "title": "get_servo_statusArguments"
+      },
+      "annotations": {
+        "read_only_hint": true
+      }
+    },
+    {
+      "name": "stop_servo",
+      "description": "Stop PWM. Does NOT switch off the external supply or guarantee mechanical braking.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "title": "stop_servoArguments"
+      },
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true,
+        "idempotent_hint": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Macの ~/.codex/config.toml に統合する。
+# トークンは実機の ~/servo-mcp/.token の値に置き換える。
+# 実トークンを入れた設定はこのフォルダへ保存しない。
+[mcp_servers.orin-nano-1-servo]
+url = "http://<JETSON_IP>:8000/mcp"
+http_headers = { Authorization = "Bearer REPLACE_WITH_TOKEN" }
