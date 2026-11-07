@@ -8,6 +8,7 @@ Jetson Orin Nano Super の 40 ピンヘッダー（物理 32 番、PWM7）につ
 
 | ファイル | 内容 |
 | --- | --- |
+| `pwm_check.py` | 50Hz の PWM を出してサーボを動かす確認用スクリプト（`sudo .venv/bin/python pwm_check.py --pulse-us 1500`） |
 | `server.py` | MCP サーバー本体（Streamable HTTP、Bearer 認証） |
 | `test_server.py` | テスト（`--simulate` 相当で GPIO に触らずに動く） |
 | `schemas/servo-mcp-tools.json` | 公開しているツール定義のスナップショット |
