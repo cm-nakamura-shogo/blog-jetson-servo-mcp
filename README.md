@@ -1,4 +1,4 @@
-# blog-jetson-servo-mcp
+# blog-nvidia-hackathon-servo-mcp
 
 Jetson Orin Nano Super の 40 ピンヘッダー（物理 32 番、PWM7）につないだ SG90 サーボを、MCP サーバーとして公開するサンプルです。
 
